@@ -9,8 +9,9 @@ COPY mvnw pom.xml ./
 #RUN chmod +x ./mvnw dependency:resolve 
 #RUN mvn clean package
 
-RUN dir -s
-RUN chmod +x mvnw dependency:go-offline
+RUN ls
+RUN ls -la
+#RUN chmod +x mvnw dependency:go-offline
 COPY src ./src
  
 CMD ["./mvnw", "spring-boot:run"]
