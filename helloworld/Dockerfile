@@ -9,7 +9,7 @@ COPY mvnw pom.xml ./
 #RUN chmod +x ./mvnw dependency:resolve 
 #RUN mvn clean package
 
-RUN dir /s
+RUN dir -s
 
 COPY src ./src
  
