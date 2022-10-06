@@ -1,16 +1,19 @@
+#FROM eclipse-temurin:17-jdk-focal
+#RUN ls -la 
+#WORKDIR /app
+#RUN ls -la 
+#COPY .mvn/ .mvn
+#COPY mvnw pom.xml ./
+#RUN ls -la
+
+#RUN chmod +x ./mvnw dependency:go-offline
+
+ 
+#COPY src ./src
+
+FROM maven:3.8.3-openjdk-17
 FROM eclipse-temurin:17-jdk-focal
-RUN ls -la 
-WORKDIR /app
-RUN ls -la 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ls -la
-
-RUN chmod +x ./mvnw dependency:go-offline
-
- 
-COPY src ./src
- 
-CMD ["./mvnw", "spring-boot:run"]
+RUN mvn clean package
+CMD ["./mvn", "spring-boot:run"]
 
 
