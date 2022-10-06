@@ -5,7 +5,7 @@ RUN ls -la
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 RUN ls -la
-RUN dos2unix mvnw
+
 RUN chmod +x ./mvnw dependency:go-offline
 
  
